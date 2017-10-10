@@ -27,7 +27,7 @@ export class EstimationModel {
         let columnList = classInstance._settings.columnList;
         let filterValue = classInstance._settings.tableFilterValue;
 
-        let table = $(dataTableSelector).DataTable({
+        $(dataTableSelector).DataTable({
             data: classInstance._settings.dataList,
             columns: [
                 {data: 'optimisticEstimation', title: columnList.optimisticEstimation},
@@ -39,15 +39,15 @@ export class EstimationModel {
                 {data: 'average', title: columnList.average},
                 {data: 'pert', title: columnList.pert},
             ],
-            orderFixed: [ 0, 'asc' ],
+            //orderFixed: [ 0, 'asc' ],
             paging: true,
             pagingType: 'simple_numbers',
-            pageLength: 25,
+            pageLength: 15,
             ordering: true,
             info: true,
             searching: true,
-            rowsGroup: [ 6],
-            order: [[4, 'asc'], [3, 'desc']],
+            rowsGroup: [ 0, 1 ],
+            //order: [[4, 'asc'], [3, 'desc']],
             search: {
                 search: filterValue
             },

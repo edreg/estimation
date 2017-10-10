@@ -76,18 +76,22 @@ class EstimationHelper
 
         $this->estimationModel->setPessimisticEstimation($pessimisticEstimation);
 
+        // calculate average
         $this->estimationModel->setAverage(
             ($optimisticEstimation + $realisticEstimation + $pessimisticEstimation) / 3
         );
 
+        // calculate PERT
         $this->estimationModel->setPert(
             ($optimisticEstimation + 4 * $realisticEstimation + $pessimisticEstimation) / 6
         );
 
+        // calculate 3P with probability
         if ($probability <= $differenceRO / $differencePO)
         {
             $this->estimationModel->setThreePoint(
-                $optimisticEstimation + sqrt($probability * $differenceRO * $differencePO)
+                $optimisticEstimation
+                + sqrt($probability * $differenceRO * $differencePO)
             );
         }
         else
