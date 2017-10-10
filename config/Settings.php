@@ -5,7 +5,7 @@ use Tracy\Debugger;
 defined('DS') || define('DS', DIRECTORY_SEPARATOR);
 define('DIR', dirname(__DIR__, 2) . DS);
 
-Debugger::enable(Debugger::DEVELOPMENT, __DIR__ . '/../../logs');
+Debugger::enable(Debugger::DEVELOPMENT, __DIR__ . '/../logs');
 
 return [
     'settings' => [
@@ -16,30 +16,14 @@ return [
 
         // Renderer settings
         'renderer'                          => [
-            'template_path' => __DIR__ . '/../../templates/',
+            'template_path' => __DIR__ . '/../templates/',
         ],
 
         // Monolog settings
         'logger'                            => [
             'name'  => 'slim-app',
-            'path'  => __DIR__ . '/../../logs/app.log',
+            'path'  => __DIR__ . '/../logs/app.log',
             'level' => \Monolog\Logger::DEBUG,
-        ],
-
-        'modules' => [
-            'core' => 'LoadMan'
-        ],
-
-        // DB Connection
-        'db'    => [
-            'driver'    => 'mysql',
-            'host'      => 'localhost',
-            'username'  => 'root',
-            'password'  => '',
-            'database'  => 'alko_rest',
-            'charset'   => 'utf8',
-            'collation' => 'utf8_unicode_ci',
-            'prefix'    => '',
         ],
 
         // Debugger
@@ -70,7 +54,7 @@ return [
                 'ConsoleNoLogin'       => 0,
                 // Multi-user credentials values( ['user1' => 'password1', 'user2' => 'password2'] )
                 'ConsoleAccounts'      => [
-                    'dev' => '34c6fceca75e456f25e7e99531e2425c6c1de443'// = sha1('dev')
+                    'dev' => 'pw'// = sha1('dev')
                 ],
                 // Password hash algorithm (password must be hashed) values('md5', 'sha256' ...)
                 'ConsoleHashAlgorithm' => 'sha1',

@@ -2,12 +2,12 @@
     "name": "estimation",
     "description": "Estimating tool",
     "keywords": ["estimation"],
-    "homepage": "https://www.logsol.de",
+    "homepage": "http://www.gerald-lippert.de/",
     "authors": [
         {
             "name": "Gerald Lippert",
-            "email": "gerald.lippert@logsol.de",
-            "homepage": "http://www.logsol.com/"
+            "email": "ger.lippert@gmail.com",
+            "homepage": "http://www.gerald-lippert.de/"
         }
     ],
     "require": {
@@ -21,7 +21,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Estimation\\": "src/"
+            "Estimation\\": "src/Estimation/"
         }
     }
 }

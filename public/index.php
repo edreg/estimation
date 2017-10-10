@@ -20,7 +20,7 @@ session_start();
 RunTracy\Helpers\Profiler\Profiler::enable();
 
 RunTracy\Helpers\Profiler\Profiler::start('loadSettings');
-$cfg = require __DIR__ . '/../src/Config/Settings.php';
+$cfg = require __DIR__ . '/../config/Settings.php';
 RunTracy\Helpers\Profiler\Profiler::finish('loadSettings');
 
 RunTracy\Helpers\Profiler\Profiler::start('initApp');
@@ -29,19 +29,19 @@ RunTracy\Helpers\Profiler\Profiler::finish('initApp');
 
 // Register dependencies
 RunTracy\Helpers\Profiler\Profiler::start('RegisterDependencies');
-require __DIR__ . '/../src/Config/Dependencies.php';
+require __DIR__ . '/../config/Dependencies.php';
 RunTracy\Helpers\Profiler\Profiler::finish('RegisterDependencies');
 
 $app->add(new RunTracy\Middlewares\TracyMiddleware($app));
 
 // Register middleware
 RunTracy\Helpers\Profiler\Profiler::start('RegisterMiddlewares');
-require __DIR__ . '/../src/Config/Middleware.php';
+require __DIR__ . '/../config/Middleware.php';
 RunTracy\Helpers\Profiler\Profiler::finish('RegisterMiddlewares');
 
 // Register routes
 RunTracy\Helpers\Profiler\Profiler::start('RegisterRoutes');
-require __DIR__ . '/../src/Config/Routes.php';
+require __DIR__ . '/../config/Routes.php';
 RunTracy\Helpers\Profiler\Profiler::finish('RegisterRoutes');
 
 //RunTracy\Helpers\Profiler\Profiler::start('RegisterModules')
