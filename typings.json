@@ -1,0 +1,15 @@
+{
+  "name": "estimation",
+  "resolution": "public/typings",
+  "globalDependencies": {
+    "angular": "registry:dt/angular#1.5.0+20160517064839",
+    "c3": "registry:dt/c3#0.0.0+20160926143332",
+    "d3": "registry:dt/d3#0.0.0+20160907005744",
+    "jquery": "registry:dt/jquery#1.10.0+20160417213236",
+    "jquery.dataTables": "github:DefinitelyTyped/DefinitelyTyped/jquery.dataTables/jquery.dataTables.d.ts#ab2462147a313f69e7118625cfcce21c005fa4af",
+    "jqueryui": "registry:dt/jqueryui#1.9.0+20160509160024",
+    "estimation": "file:./src/module/Estimation/assets/typings/index.d.ts",
+    "promise": "registry:dt/promise#7.1.1+20160602154553",
+    "systemjs": "registry:dt/systemjs#0.19.29+20160702105636"
+  }
+}

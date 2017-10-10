@@ -14,19 +14,28 @@ use Slim\Http\Request;
 class EstimationModel
 {
     /** @var float */
-    private $optimisticEstimation;
+    public $optimisticEstimation;
 
     /** @var float */
-    private $realisticEstimation;
+    public $realisticEstimation;
 
     /** @var float */
-    private $pessimisticEstimation;
+    public $pessimisticEstimation;
 
     /** @var float */
-    private $probability;
+    public $probability;
 
     /** @var float */
-    private $uncertainty;
+    public $uncertainty;
+
+    /** @var float */
+    public $threePoint;
+
+    /** @var float */
+    public $average;
+
+    /** @var float */
+    public $pert;
 
     /**
      * @return float
@@ -108,6 +117,57 @@ class EstimationModel
         $this->uncertainty = $uncertainty;
     }
 
+    /**
+     * @return float
+     */
+    public function getThreePoint() : float
+    {
+        return $this->threePoint;
+    }
+
+    /**
+     * @param float $threePoint
+     */
+    public function setThreePoint(float $threePoint)
+    {
+        $this->threePoint = number_format($threePoint, 2);
+    }
+
+    /**
+     * @return float
+     */
+    public function getAverage() : float
+    {
+        return $this->average;
+    }
+
+    /**
+     * @param float $average
+     */
+    public function setAverage(float $average)
+    {
+        $this->average = number_format($average, 2);
+    }
+
+    /**
+     * @return float
+     */
+    public function getPert() : float
+    {
+        return $this->pert;
+    }
+
+    /**
+     * @param float $pert
+     */
+    public function setPert(float $pert)
+    {
+        $this->pert = number_format($pert, 2);
+    }
+
+    /**
+     * @param \Slim\Http\Request $request
+     */
     public function initFromRequest(Request $request)
     {
         $this->setOptimisticEstimation((float) $request->getParam('optimistic'));
@@ -116,4 +176,6 @@ class EstimationModel
         $this->setProbability((float) $request->getParam('probability'));
         $this->setPessimisticEstimation($this->realisticEstimation * $this->uncertainty);
     }
+
+
 }

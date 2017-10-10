@@ -9,7 +9,7 @@
     "Gerald Lippert"
   ],
   "license": "MIT",
-  "homepage": "www.logsol-gmbh.de",
+  "homepage": "www.gerald-lippert.de",
   "ignore": [
     "**/.*",
     "node_modules",
@@ -21,7 +21,17 @@
   "dependencies": {
     "jquery": "~2.1.4",
     "jquery-ui": "jqueryui#^1.11.4",
-    "bootstrap": "~3.3.7"
+    "bootstrap": "~3.3.7",
+    "angular": "^1.5.0",
+    "datatables": "DataTables#^1.10.11",
+    "datatables-rowsgroup": "^2.0.0",
+    "d3": "^3.5",
+    "c3": "0.4.10",
+    "system.js": "^0.19.38",
+    "sprintf": "^1.0.3",
+    "promise-polyfill": "^6.0.2",
+    "searchable-option-list": "searchable-list#^2.0.0",
+    "datatables-i18n": "^1.0.4"
   },
   "main": "",
   "moduleType": []

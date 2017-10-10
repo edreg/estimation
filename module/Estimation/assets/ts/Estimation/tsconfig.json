@@ -1,0 +1,14 @@
+{
+  "files": [
+    "app.ts",
+    "run.ts",
+    "../../../../../public/typings/index.d.ts"
+  ],
+  "compilerOptions": {
+    "outFile": "./public/module/Estimation/assets/js/estimation.js",
+    "module": "system",
+    "removeComments": true,
+    "target": "es5",
+    "sourceMap": true
+  }
+}

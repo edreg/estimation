@@ -17,39 +17,6 @@ class EstimationHelper
     /** @var EstimationModel */
     private $estimationModel;
 
-    /** @var float */
-    private $threePoint;
-
-    /** @var float */
-    private $average;
-
-    /** @var float */
-    private $pert;
-
-    /**
-     * @return float
-     */
-    public function getThreePoint() : float
-    {
-        return $this->threePoint;
-    }
-
-    /**
-     * @return float
-     */
-    public function getAverage() : float
-    {
-        return $this->average;
-    }
-
-    /**
-     * @return float
-     */
-    public function getPert() : float
-    {
-        return $this->pert;
-    }
-
     /**
      * @param \Estimation\Model\EstimationModel $estimationModel
      */
@@ -62,10 +29,37 @@ class EstimationHelper
      * EstimationHelper constructor.
      *
      * @param \Estimation\Model\EstimationModel $model
+     *
+     * @throws \Estimation\Exception\ValidationEstimationException
      */
     public function __construct(EstimationModel $model)
     {
         $this->setEstimationModel($model);
+    }
+
+    /**
+     * @return array
+     */
+    public function getCalculationList() : array
+    {
+        $list = [];
+        $probabilityList = range(0.1, 1, 0.1);
+        $uncertaintyList = range(1, 10);
+
+        foreach ($probabilityList as $probability)
+        {
+            $this->estimationModel->setProbability($probability);
+
+            foreach ($uncertaintyList as $uncertainty)
+            {
+                $this->estimationModel->setUncertainty($uncertainty);
+                $this->calculate();
+
+                $list[] = clone $this->estimationModel;
+            }
+        }
+
+        return $list;
     }
 
     public function calculate()
@@ -80,18 +74,27 @@ class EstimationHelper
         $differenceRO          = $realisticEstimation - $optimisticEstimation;
         $differencePO          = $pessimisticEstimation - $optimisticEstimation;
 
-        $this->average = ($optimisticEstimation + $realisticEstimation + $pessimisticEstimation) / 3;
-        $this->pert = ($optimisticEstimation + 4 * $realisticEstimation + $pessimisticEstimation) / 6;
+        $this->estimationModel->setPessimisticEstimation($pessimisticEstimation);
+
+        $this->estimationModel->setAverage(
+            ($optimisticEstimation + $realisticEstimation + $pessimisticEstimation) / 3
+        );
+
+        $this->estimationModel->setPert(
+            ($optimisticEstimation + 4 * $realisticEstimation + $pessimisticEstimation) / 6
+        );
 
         if ($probability <= $differenceRO / $differencePO)
         {
-            $this->threePoint = $optimisticEstimation + sqrt($probability * $differenceRO * $differencePO);
+            $this->estimationModel->setThreePoint(
+                $optimisticEstimation + sqrt($probability * $differenceRO * $differencePO)
+            );
         }
         else
         {
             $differencePR = $pessimisticEstimation - $realisticEstimation;
 
-            $this->threePoint =
+            $this->estimationModel->setThreePoint(
                 $pessimisticEstimation
                 - sqrt
                 (
@@ -101,9 +104,8 @@ class EstimationHelper
                     - 2 * $pessimisticEstimation * $realisticEstimation
                     + $realisticEstimation ** 2
                 )
-            ;
+            );
         }
-
     }
 
     /**

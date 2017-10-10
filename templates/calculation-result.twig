@@ -1,9 +1,8 @@
 {% include 'estimation-form.twig' %}
 
 <h1 class="content-subhead">Calculation result</h1>
-
 <div>
-    <div class="row">
+    <div class="content-subhead row">
         <div class="col-md-3 col-sm-3 col-xs-3">Pessimistic: </div>
         <div class="col-md-3 col-sm-3 col-xs-3">PERT: </div>
         <div class="col-md-3 col-sm-3 col-xs-3">Average: </div>
@@ -15,4 +14,13 @@
         <div class="col-md-3 col-sm-3 col-xs-3">{{ average }}</div>
         <div class="col-md-3 col-sm-3 col-xs-3">{{ threeP }}</div>
     </div>
+</div>
+<h1 class="content-subhead">Calculation variations</h1>
+<div id="{{ settings }}" class="js-settings" style="display: none;">
+    {% autoescape %}
+        {{ settingList|raw }}
+    {% endautoescape %}
+</div>
+<div>
+    <table id="{{ dataTableId }}" class="table table-striped table-bordered"></table>
 </div>

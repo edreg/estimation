@@ -1,5 +1,8 @@
 composer.lock
 vendor
 public/components
+public/module
+public/typings
 logs/app.log
 .idea
+node_modules
