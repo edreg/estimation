@@ -1,0 +1,5 @@
+composer.lock
+vendor
+public/components
+logs/app.log
+.idea

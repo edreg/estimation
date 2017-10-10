@@ -1,0 +1,21 @@
+<h1 class="content-subhead">Calculate the estimation</h1>
+
+<form role="form" method="POST" class="form-inline">
+    <div class="form-group">
+        <label for="optimistic">Optimistic</label>
+        <input type="text" class="form-control" id="optimistic" name="optimistic" value="{{ optimistic }}">
+    </div>
+    <div class="form-group">
+        <label for="realistic">Realistic</label>
+        <input type="text" class="form-control" id="realistic" name="realistic" value="{{ realistic }}">
+    </div>
+    <div class="form-group">
+        <label for="uncertainty">Uncertainty</label>
+        <input type="text" class="form-control" id="uncertainty" name="uncertainty" value="{{ uncertainty }}">
+    </div>
+    <div class="form-group">
+        <label for="probability">Probability</label>
+        <input type="text" class="form-control" id="probability" name="probability" value="{{ probability }}">
+    </div>
+    <button type="submit" class="btn btn-info">Calculate</button>
+</form>

@@ -1,0 +1,27 @@
+{
+    "name": "estimation",
+    "description": "Estimating tool",
+    "keywords": ["estimation"],
+    "homepage": "https://www.logsol.de",
+    "authors": [
+        {
+            "name": "Gerald Lippert",
+            "email": "gerald.lippert@logsol.de",
+            "homepage": "http://www.logsol.com/"
+        }
+    ],
+    "require": {
+        "php": ">=7.0",
+        "slim/slim": "^3.1",
+        "slim/php-view": "^2.0",
+        "monolog/monolog": "^1.17",
+        "slim/twig-view": "^2.2",
+        "roave/security-advisories": "dev-master",
+        "runcmf/runtracy": "^0.2.10"
+    },
+    "autoload": {
+        "psr-4": {
+            "Estimation\\": "src/"
+        }
+    }
+}

@@ -1,0 +1,18 @@
+{% include 'estimation-form.twig' %}
+
+<h1 class="content-subhead">Calculation result</h1>
+
+<div>
+    <div class="row">
+        <div class="col-md-3 col-sm-3 col-xs-3">Pessimistic: </div>
+        <div class="col-md-3 col-sm-3 col-xs-3">PERT: </div>
+        <div class="col-md-3 col-sm-3 col-xs-3">Average: </div>
+        <div class="col-md-3 col-sm-3 col-xs-3">3P: </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3 col-sm-3 col-xs-3">{{ pessimistic }}</div>
+        <div class="col-md-3 col-sm-3 col-xs-3">{{ pert }}</div>
+        <div class="col-md-3 col-sm-3 col-xs-3">{{ average }}</div>
+        <div class="col-md-3 col-sm-3 col-xs-3">{{ threeP }}</div>
+    </div>
+</div>
