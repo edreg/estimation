@@ -43,8 +43,8 @@ class EstimationHelper
     public function getCalculationList() : array
     {
         $list = [];
-        $probabilityList = range(0.1, 1, 0.1);
-        $uncertaintyList = range(1, 10);
+        $probabilityList = range(0.5, 1, 0.1);
+        $uncertaintyList = range(1, 5);
 
         foreach ($probabilityList as $probability)
         {
