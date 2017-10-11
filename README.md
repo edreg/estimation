@@ -36,3 +36,4 @@ Tiny tool to compare different approaches for estimating costs of developing pac
 * Documentation on how to add another estimation approach 
 * bower migration to yarn?
 * remove code smell
+* ErrorHandling
