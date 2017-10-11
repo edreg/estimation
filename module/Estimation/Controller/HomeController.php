@@ -38,7 +38,6 @@ class HomeController extends AbstractController
      */
     public function indexAction($request, $response, $args) : ResponseInterface
     {
-        unset($request);
         $this->logger->info("Slim-Skeleton '/' route");
 
         $args['content'] = HomeController::INDEX_TWIG;

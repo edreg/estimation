@@ -6,3 +6,4 @@ public/typings
 logs/app.log
 .idea
 node_modules
+module/Estimation/assets/typings/index.d.ts
