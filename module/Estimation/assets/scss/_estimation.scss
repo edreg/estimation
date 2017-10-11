@@ -1,3 +1,26 @@
 .js-settings {
   display: none;
 }
+
+.container {
+  button {
+    float: none;
+    margin: 20px 0 0 0;
+    display: block;
+  }
+
+  table {
+    tr {
+      &:hover {
+        td {
+          background: #c3c3c3;
+
+          &:nth-child(1),
+          &:nth-child(2) {
+            background: none;
+          }
+        }
+      }
+    }
+  }
+}
