@@ -4,9 +4,9 @@ Tiny tool to compare different approaches for estimating costs of developing pac
 
 # Implemented so far
  
-Simple average: (optimistic + realistic + pessimistic) / 3
-PERT: (optimistic + 4 * realistic + pessimistic) / 6
-3P with probability and an uncertainty factor: please look up the formula inside the code (path/to/estimation/module/Estimation/Helper/EstimationHelper.php)
+* Simple average: (optimistic + realistic + pessimistic) / 3
+* PERT: (optimistic + 4 * realistic + pessimistic) / 6
+* 3P with probability and an uncertainty factor: please look up the formula inside the code (path/to/estimation/module/Estimation/Helper/EstimationHelper.php)
 
 # Dependencies
 
@@ -23,7 +23,7 @@ PERT: (optimistic + 4 * realistic + pessimistic) / 6
 
 4. Install all dependencies
     * composer install (backend)
-    * npm install (Do not forget global dependency)
+    * npm install (do not forget global dependency)
     * bower install (frontend)
     * gulp ts-estimation-typings-concat (This compiles all typings into one file)
     * typings install (typescript definition (https://www.npmjs.com/package/typings))
